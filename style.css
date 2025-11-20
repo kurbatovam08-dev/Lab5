@@ -1,0 +1,339 @@
+/* Плавный скролл между секциями */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Сброс базовых отступов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Базовые стили */
+body {
+    font-family: Arial, sans-serif;
+    color: #000;
+}
+
+/* Анимация появления снизу */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ====== HOME / HEADER ====== */
+
+header {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #27D5E5 0%, #3326D8 50%, #6A1760 100%);
+}
+
+.hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    animation: fadeInUp 0.7s ease-out;
+}
+
+/* Левая часть */
+.hero-left {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Бирюзовая полоса слева */
+.hero-shape {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;                 /* во весь экран */
+    width: 33%;                    /* ширина полосы */
+    background-color: #35D3E3;
+    border-radius: 0 50% 50% 0;    /* форма как в макете */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Большой круг с логотипом */
+.hero-circle {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #5F1B8B 0%, #2E0D66 60%, #5D0D46 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    font-size: 52px;
+    color: #FF4C7F;
+    letter-spacing: 2px;
+}
+
+/* Меню */
+.main-nav {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.main-nav a {
+    font-size: 26px;
+    text-decoration: underline;
+    color: #000;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.main-nav a:hover {
+    color: #5b1b88;
+    transform: translateX(4px);
+}
+
+/* Правая часть — круг с платой */
+.hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image-circle {
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    padding: 40px;
+    background: radial-gradient(circle, #ffffff 0%, #e6e4ff 60%, #4C37DE 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 30px;
+}
+
+/* ====== CATALOG SECTION ====== */
+
+.section-catalog {
+    padding: 120px 80px;
+    min-height: 100vh;   /* полноценная страница */
+    background: linear-gradient(135deg, #DCDCDC 0%, #F191FF 40%, #3427CB 100%);
+    text-align: center;
+    animation: fadeInUp 0.7s ease-out;
+}
+
+.section-catalog h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+/* Сетка моделей */
+.models-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.model-card {
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.model-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.model-card img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.model-card figcaption {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* ====== CONTACTS SECTION ====== */
+
+.section-contacts {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    padding: 120px 80px;
+    min-height: 100vh;      /* полноценная страница */
+    gap: 40px;
+    background-color: #ffffff;
+    animation: fadeInUp 0.7s ease-out;
+}
+
+/* Левая колонка с lilypad */
+.contacts-left {
+    position: relative;
+    min-height: 420px;
+}
+
+.lilypad-circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #ffffff;
+    padding: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.lilypad-circle img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Позиции кружков */
+.lilypad-1 { top: 40px; left: 40px; }
+.lilypad-2 { top: 180px; left: 0; }
+.lilypad-3 { bottom: 60px; left: 70px; }
+.lilypad-4 { bottom: 90px; left: 190px; }
+
+/* Правая колонка */
+.contacts-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Фиолетовый баннер */
+.contacts-banner {
+    align-self: flex-start;
+    padding: 18px 40px;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #2B2DCB 0%, #6820C0 50%, #F34DDC 100%);
+}
+
+.contacts-banner p {
+    font-size: 26px;
+    font-weight: 600;
+    color: #000;
+}
+
+.contacts-text {
+    font-size: 18px;
+    max-width: 520px;
+}
+
+/* Форма */
+.contact-form {
+    max-width: 520px;
+    padding: 30px 30px 35px;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #2E0D7A 0%, #5C1FBC 50%, #E243FF 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-form input {
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    padding: 0 12px;
+    background-color: #DADADA;
+    font-size: 14px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.contact-form button {
+    margin-top: 8px;
+    height: 45px;
+    border-radius: 25px;
+    border: none;
+    background-color: #F365FF;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.contact-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    background-color: #ff7bff;
+}
+
+/* ====== АДАПТИВ ====== */
+
+@media (max-width: 1000px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 30px 20px 60px;
+    }
+
+    .hero-shape {
+        position: static;
+        width: 100%;
+        height: auto;
+        border-radius: 0 0 40% 40%;
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    .hero-right {
+        margin-top: 20px;
+    }
+
+    .section-contacts {
+        grid-template-columns: 1fr;
+    }
+
+    .contacts-left {
+        min-height: 320px;
+        margin-bottom: 30px;
+    }
+
+    .models-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .models-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-catalog,
+    .section-contacts {
+        padding: 40px 20px;
+    }
+}

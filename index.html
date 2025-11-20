@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arduino Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ====== HOME / HEADER ====== -->
+<header id="home">
+    <div class="hero">
+        <!-- левая часть: полоса, круг и меню -->
+        <div class="hero-left">
+            <div class="hero-shape">
+                <div class="hero-circle">
+                    <h1 class="logo">Aruino</h1>
+                </div>
+
+                <nav class="main-nav">
+                    <a href="#home">Home</a>
+                    <a href="#catalog">Catalog</a>
+                    <a href="#contacts">Contacts</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- правая часть: круг с картинкой платы -->
+        <div class="hero-right">
+            <div class="hero-image-circle">
+                <img src="photo/arduino-uno.png" alt="Arduino UNO board">
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <!-- ====== CATALOG SECTION ====== -->
+    <section id="catalog" class="section-catalog">
+        <h2>Popular Arduino models</h2>
+
+        <div class="models-grid">
+            <figure class="model-card">
+                <img src="photo/arduino-mega.png" alt="Arduino Mega ADK">
+                <figcaption>Arduino Mega ADK</figcaption>
+            </figure>
+
+            <figure class="model-card">
+                <img src="photo/arduino-wifi.png" alt="Arduino WiFi Shield">
+                <figcaption>Arduino WiFi Shield</figcaption>
+            </figure>
+
+            <figure class="model-card">
+                <img src="photo/arduino-yun.png" alt="Arduino YUN">
+                <figcaption>Arduino YUN</figcaption>
+            </figure>
+
+            <figure class="model-card">
+                <img src="photo/arduino-due.png" alt="Arduino DUE">
+                <figcaption>Arduino DUE</figcaption>
+            </figure>
+
+            <figure class="model-card">
+                <img src="photo/arduino-leonardo.png" alt="Arduino Leonardo">
+                <figcaption>Arduino Leonardo</figcaption>
+            </figure>
+
+            <figure class="model-card">
+                <img src="photo/arduino-uno.png" alt="Arduino UNO">
+                <figcaption>Arduino UNO</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- ====== CONTACTS SECTION ====== -->
+    <section id="contacts" class="section-contacts">
+        <!-- левая колонка с круглыми Lilypad -->
+        <div class="contacts-left">
+            <div class="lilypad-circle lilypad-1">
+                <img src="photo/lilypad-1.png" alt="LilyPad Arduino board">
+            </div>
+            <div class="lilypad-circle lilypad-2">
+                <img src="photo/lilypad-2.png" alt="LilyPad Arduino board">
+            </div>
+            <div class="lilypad-circle lilypad-3">
+                <img src="photo/lilypad-3.png" alt="LilyPad Arduino board">
+            </div>
+            <div class="lilypad-circle lilypad-4">
+                <img src="photo/lilypad-4.png" alt="LilyPad Arduino board">
+            </div>
+        </div>
+
+        <!-- правая колонка: текст + форма -->
+        <div class="contacts-right">
+            <div class="contacts-banner">
+                <p>Choose Arduino and<br>program your future</p>
+            </div>
+
+            <p class="contacts-text">
+                Whatever you want to create, whatever you want to implement in life,
+                we have everything for that. Choose the one that suits you best:
+            </p>
+
+            <form class="contact-form">
+                <input type="text" placeholder="Your name">
+                <input type="email" placeholder="Your email">
+                <div class="form-row">
+                    <input type="text" placeholder="Phone">
+                    <input type="text" placeholder="Board type">
+                </div>
+                <button type="submit">Contact us</button>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <!-- при желании можешь добавить копирайт -->
+</footer>
+
+</body>
+</html>
+
